@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Matrix Calculation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <img src="assets/cat.png" style="width: 221px; height: 70px;" onclick="window.location.reload();" />
+            </div>
+            <nav class="header-navigation">
+                <a href="https://kyongmini.github.io/">Home</a>
+                <button>Menu</button>
+            </nav>
+        </div>
+    </header>
+</head>
+<main class="main">
+	<div class="main-content responsive-wrapper">
+		<article class="widget">
+            <h3>Ray Matrix : ABCD Matrix Calculation</h3>
+			<h2>Are you having trouble calculating the Ray Matrix? </h2>
+			<p>This website can help you with the difficulty of <strong>calculating the ray matrix</strong> in geometric optics. The types of matrices(consists of 8 matrices) are as belows.
+
+            <p style="line-height: 70px;"><strong>Distance :</strong> <img src="assets/M1.png" style="width: 170px; height: 64px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Object Distance :</strong> <img src="assets/M2.png" style="width: 176px; height: 63px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Image Distance :</strong> <img src="assets/M3.png" style="width: 176px; height: 63px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Interface :</strong> <img src="assets/M4.png" style="width: 231px; height: 92px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Curved interface :</strong> <img src="assets/M5.png" style="width: 286px; height: 94px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Thin Lens :</strong> <img src="assets/M6.png" style="width: 203px; height: 101px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Mirror :</strong> <img src="assets/M7.png" style="width: 297px; height: 90px; vertical-align: middle;"></p>
+            <p style="line-height: 70px;"><strong>Identity Matrix (As distance z=0) :</strong> <img src="assets/M8.png" style="width: 144px; height: 84px; vertical-align: middle;"></p>
+            <p>It is supposed that it is <strong>PARAXIAL APPROXIMATION</strong>.</p>
+            <p>In the curved interface matrix, if the <strong>radius of curvature(R)</strong> is <strong>infinite</strong>, please enter the 'w'.</p>
+			<p></p>
+			<p>If you input the matrices M1, M2, M3.... and Mn in order, it will be calculated as <strong>M_sys = Mn*...*M2*M1</strong>.</p>
+            <p></p>
+            <p>If you input the matrices such as M_sys = M_image*M(arbitrary matrix)*M_object and get B = 0, you can get the <strong>Imaging Magnification(A).</strong></p>
+            <p>For accurate calculation, please express as <strong>fractions.</ ex) 0.6666667...=2/3</p>
+            <p></p>
+            <h4><strong>Then, Let's calculate the ABCD Matrix!</strong></p>
+		</article>
+	</div>
+</main>
+<body>
+    <div class="container">
+        <div class="input-area">
+            <p>Select the Matrices</p>
+            <div id="matrix-images"
+                <div class="matrix-group">
+                    <div class="matrix-item" onclick="addMatrix('M_space')">
+                        <img src="assets/M_space.png" alt="M_space" class="matrix-image">
+                        <div class="matrix-name">Distance</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_ObjectDistance')">
+                        <img src="assets/M_ObjectDistance.png" alt="M_ObjectDistance" class="matrix-image">
+                        <div class="matrix-name">Object</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_ImageDistance')">
+                        <img src="assets/M_ImageDistance.png" alt="M_ImageDistance" class="matrix-image">
+                        <div class="matrix-name">Image</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_interface')">
+                        <img src="assets/M_interface.png" alt="M_interface" class="matrix-image">
+                        <div class="matrix-name">Interface</div>
+                    </div>
+                </div>
+                <div class="matrix-group">
+                    <div class="matrix-item" onclick="addMatrix('M_curved')">
+                        <img src="assets/M_curved.png" alt="M_curved" class="matrix-image">
+                        <div class="matrix-name">Curved</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_lens')">
+                        <img src="assets/M_lens.png" alt="M_lens" class="matrix-image">
+                        <div class="matrix-name">Lens</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_mirror')">
+                        <img src="assets/M_mirror.png" alt="M_mirror" class="matrix-image">
+                        <div class="matrix-name">Mirror</div>
+                    </div>
+                    <div class="matrix-item" onclick="addMatrix('M_identity')">
+                        <img src="assets/M_identity.png" alt="M_identity" class="matrix-image">
+                        <div class="matrix-name">Identity</div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main">
+                <div class="main-content responsive-wrapper">
+                    <article class="widget">
+                        <div id="variables"></div>
+                        <div id="matrices"></div>
+                    </article>
+                </div>
+            </main>  
+        <div class="container2">
+            <a href="#" class="button" onclick="calculate(); scrollToResult(event);">Calculate the ABCD Matrix</a>
+
+        <div id="result"></div>
+    </div>
+    <script src="function.js"></script>
+</body>
+<footer>
+    <p>
+        <span>Author : kyongmini</span><br/>
+        <span>E-mail : kyongmini@khu.ac.kr</span>
+    </p>
+</footer>
+</html>

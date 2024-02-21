@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--header-outer-height: 110px;
+	--header-inner-height: 70px;
+	--header-height-difference: calc(
+		var(--header-outer-height) - var(--header-inner-height)
+	);
+	--header-bg: #fff;
+}
+
+h3 {
+    color: #454545; 
+    font-size: 36px; 
+    font-weight: bold; 
+ 
+    margin-top: 20px; 
+    margin-bottom: 50px; 
+}
+
+h4 {
+	color: #666666;
+	font-size: 28px;
+}
+
+body {
+	font-family: "DM Sans", sans-serif;
+	background-color: #f2f5f7;
+	line-height: 1.5;
+	min-height: 300vh;
+	position: relative;
+}
+
+.responsive-wrapper {
+	width: 90%;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* Sticky header */
+.header-outer {
+	/* Make it stick */
+	height: var(--header-outer-height);
+	position: sticky;
+	top: calc(
+		var(--header-height-difference) * -1
+	); /* Multiply by -1 to get a negative value */
+	display: flex;
+	align-items: center;
+	z-index: 1000;
+
+	/* Other */
+	background-color: var(--header-bg);
+	box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+
+.header-inner {
+	/* Make it stick */
+	height: var(--header-inner-height);
+	position: sticky;
+	top: 0;
+
+	/* Other */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Styling of other elements */
+.header-logo img {
+	display: block;
+	height: calc(var(--header-inner-height) - 30px);
+}
+
+.header-navigation {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header-navigation a,
+.header-navigation button {
+	font-size: 1.125rem;
+	color: inherit;
+	margin-left: 1.75rem;
+	position: relative;
+	font-weight: 500;
+}
+
+.header-navigation a {
+	display: none;
+	font-size: 1.125rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.header-navigation button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+	transform: scalex(1);
+}
+
+.header-navigation a:after,
+.header-navigation button:after {
+	transition: 0.25s ease;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentcolor;
+	transform: scalex(0);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+.main {
+	margin-top: 3rem;
+}
+
+.widget {
+	width: 100%;
+	max-width: 800px;
+	border-radius: 8px;
+	box-shadow: 0 15px 30px 0 rgba(0,0,0, 0.1);
+	background-color: #fff;
+	padding: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	font-size: 1.125rem;
+}
+
+.widget > * + * {
+	margin-top: 1.25em;
+}
+
+.widget h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.widget code {
+	display: inline-block;
+	padding: 0.125em 0.25em;
+	border-radius: 2px;
+	background-color: #bee5d3;
+}
+
+.widget strong {
+	font-weight: 700;
+}
+
+
+@media (min-width: 800px) {
+	.header-navigation a {
+		display: inline-block;
+	}
+
+	.header-navigation button {
+		display: none;
+	}
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-area {
+    margin-bottom: 20px;
+}
+
+.input-area p {
+	
+		color: black;
+		font-size: 32px; 
+		font-weight: bold; 
+		margin-top: 20px; 
+		margin-bottom: 50px; 
+		margin-left: 0; 
+    	margin-right: 0; 
+		text-align: center; 
+}
+
+#matrices {
+    margin-bottom: 20px;
+}
+
+.button {
+	display: inline-block;
+	padding: 0.75rem 1.25rem;
+	border-radius: 10rem;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: 0.15rem;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+  }
+  .button:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #6969;
+	border-radius: 10rem;
+	z-index: -2;
+  }
+  .button:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	background-color: #777;
+	transition: all 0.3s;
+	border-radius: 10rem;
+	z-index: -1;
+  }
+  .button:hover {
+	color: #fff;
+  }
+  .button:hover:before {
+	width: 100%;
+  }
+
+  * {
+	font-family: Arial;
+	text-decoration: none;
+	font-size: 18px;
+  }
+  .container2 {
+	padding-top: 50px;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+  }
+  
+  span {
+	display: block;
+	margin-top: 2rem;
+	font-size: 0.7rem;
+	color: #777;
+  }
+  span a {
+	font-size: 0.7rem;
+	color: #999;
+	text-decoration: underline;
+  }
+  
+
+#result {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.matrix-name {
+    margin-top: 5px;
+	font-size: 20px; 
+}
+
+
+.matrix-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.matrix-group .matrix-item {
+    margin-right: 80px;
+	
+}
+
+.matrix-group .matrix-item:last-child {
+    margin-right: 0;
+}
+
+.matrix-item {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.matrix-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    z-index: 1;
+    animation: glow 1s infinite alternate; 
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8); 
+    }
+    to {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
+    }
+}
+
+.matrix-image {
+    width: 100px;
+    height: 100px;
+    transition: filter 0.3s; 
+}
+
+.matrix-item:hover .matrix-image {
+    filter: brightness(150%); 
+}
+
+#result {
+	padding-top: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    transform: scale(1.2);
+}
+
+#result table {
+    margin: 30px auto; 
+    border-collapse: collapse; 
+    width: 100%; 
+}
+
+#result th,
+#result td {
+    padding: 8px; 
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#result th {
+    background-color: #f2f2f2; 
+}
+
+#result td {
+    white-space: nowrap; 
+}
+
+.variable-cell input {
+    font-size: 12px;
+}
+
+#variables {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-color: white;
+    z-index: -1;
+}
+
+
+footer p {
+    
+    margin-top: 20px; /* 위쪽 여백을 추가합니다. */
+}
+
+footer span {
+    color: black; /* 글자 색을 조절합니다. */
+	font-size: 17px;
+}
