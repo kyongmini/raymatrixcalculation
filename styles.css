@@ -35,6 +35,7 @@ body {
 	line-height: 1.5;
 	min-height: 300vh;
 	position: relative;
+	max-width: 1280px;
 }
 
 .responsive-wrapper {
@@ -63,12 +64,10 @@ body {
 }
 
 .header-inner {
-	/* Make it stick */
 	height: var(--header-inner-height);
 	position: sticky;
 	top: 0;
 
-	/* Other */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
